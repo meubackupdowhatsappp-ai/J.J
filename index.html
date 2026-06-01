@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://i.ibb.co/yFW7C2LL/pngtree-heart-shaped-orange-fruit-png-image-19992868.png">
+    <title>Nosso Namoro?</title>
+</head>
+
+<body class="body">
+
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <section class="home-section">
+        <header>
+            <a class="link-logo" href="index.html"><span class="logo"><span class="logo-ms">J</span>&<span
+                        class="logo-ms">J</span></span></a>
+            <div class="menu" id="open-menu"><i class="ri-menu-line"></i></div>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item" id="nav__item">
+                        <a href="index.html" class="nav__link">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="momentos.html" class="nav__link">Momentos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav__link admin-btn" id="btn-nav-musica">
+                            <i class="ri-disc-line"></i> Música de Fundo
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav__link admin-btn" id="btn-nav-config">
+                            <i class="ri-settings-4-line"></i> Gerenciar Momentos
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="menu close-menu" id="close-menu" aria-label="Fechar Menu">
+                    <i class="ri-close-fill"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="textos-centrais">
+            <h2 class="subtitulo">vamos relembrar os...</h2>
+            <h1 class="titulo">NOSSOS<br>MOMENTOS?</h1>
+        </div>
+
+        <a href="momentos.html" class="btn-iniciar">INICIAR</a>
+
+        <img src="https://i.ibb.co/mFHbZ882/image-6.png" alt="Gato" class="elemento gato">
+        <img src="https://i.ibb.co/zWdR8MFL/image-4.png" alt="Flor" class="elemento flor">
+        <img src="https://i.ibb.co/qLxZzTYq/image-3.png" alt="Borboleta" class="elemento cassete">
+        <img src="https://i.ibb.co/pvw4MFKr/ddsadsadsa.jpg" alt="Foto Casal 1" class="elemento foto1">
+        <img src="https://i.ibb.co/Hyn4C0j/Whats-App-Image-2026-05-30-at-16-21-46.jpg" alt="Foto Casal 2" class="elemento foto2">
+        <img src="https://i.ibb.co/k2THdBqD/Whats-App-Image-2026-05-30-at-16-25-06.jpg" alt="Foto Casal 3" class="elemento foto3">
+        <img src="https://i.ibb.co/GQnfZxfX/image-5.png" alt="Laranja"
+            class="elemento laranja">
+        <img src="https://i.ibb.co/mrRvpZYM/image-2.png" alt="Estrela" class="elemento estrela">
+        <img src="https://i.ibb.co/N6dPb9t3/image-1.png" alt="Disco" class="elemento disco">
+        <img src="https://i.ibb.co/nMKL360k/image.png" alt="Minhoca" class="elemento minhoca">
+    </section>
+
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content modal-login">
+            <span class="close-modal" id="close-login">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Acesso Restrito</h2>
+            <p style="margin-bottom: 15px;">Apenas o casal pode alterar isso 💖</p>
+
+            <input type="text" id="login-user" placeholder="Usuário" class="input-admin">
+            <input type="password" id="login-pass" placeholder="Senha" class="input-admin">
+
+            <button id="btn-login" class="btn-iniciar"
+                style="position: relative; margin-top: 15px; padding: 10px 40px; right: auto; bottom: auto; width: 100%;">Entrar</button>
+            <p id="login-erro" style="color: red; display: none; margin-top: 10px;">Credenciais incorretas!</p>
+        </div>
+    </div>
+
+    <div id="musica-modal" class="modal hidden">
+        <div class="modal-content modal-musica">
+            <span class="close-modal" id="close-musica">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Nossa Playlist</h2>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+                <input type="text" id="busca-musica" placeholder="Buscar música..." class="input-admin"
+                    style="margin-top: 0; flex: 1;">
+                <button id="btn-abrir-add" class="btn-iniciar"
+                    style="position: static; padding: 10px 15px; font-size: 1rem; width: auto; animation: none;">
+                    + Adicionar
+                </button>
+            </div>
+
+            <div class="lista-musicas" id="lista-musicas">
+                <p>Carregando músicas...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-musica-modal" class="modal hidden" style="z-index: 3001;">
+        <div class="modal-content modal-musica-add">
+            <span class="close-modal" id="close-add-musica">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Nova Música</h2>
+
+            <div class="upload-area" style="margin-top: 20px;">
+                <input type="text" id="nome-musica" placeholder="Nome da Música (Ex: Nossa Música)" class="input-admin">
+                <input type="file" id="arquivo-musica" accept="audio/mp3, audio/mpeg" class="input-admin">
+                <button id="btn-upload-musica" class="btn-iniciar"
+                    style="position: static; padding: 10px 20px; font-size: 1rem; width: 100%; margin-top: 15px; animation: none;">
+                    Enviar Música
+                </button>
+                <p id="upload-status" style="margin-top: 10px; font-weight: bold; color: #8d0036;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="config-modal" class="modal hidden">
+        <div class="modal-content modal-musica">
+            <span class="close-modal" id="close-config">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Nossos Momentos</h2>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+                <input type="text" id="busca-momento" placeholder="Buscar momento..." class="input-admin"
+                    style="margin-top: 0; flex: 1;">
+                <button id="btn-abrir-add-momento" class="btn-iniciar"
+                    style="position: static; padding: 10px 15px; font-size: 1rem; width: auto; animation: none;">
+                    + Novo
+                </button>
+            </div>
+
+            <div class="momentos-grid" id="momentos-grid">
+                <p>Carregando momentos...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-momento-modal" class="modal hidden" style="z-index: 3500;">
+        <div class="modal-content modal-full">
+            <div class="modal-header-edit">
+                <button id="btn-voltar-edit" class="btn-voltar-seta"><i class="ri-arrow-left-line"></i></button>
+                <h2 id="titulo-form-momento" style="color: #8d0036; font-family: Lemon; margin: 0;">Editar Momento</h2>
+            </div>
+
+            <div class="edit-container">
+                <div class="preview-area">
+                    <img id="edit-preview-img" src="https://via.placeholder.com/300x200?text=Sua+Foto+Aqui"
+                        alt="Preview">
+                </div>
+
+                <div class="campos-area">
+                    <label>Nome do Momento:</label>
+                    <input type="text" id="edit-titulo" class="input-admin" placeholder="Ex: Nosso primeiro encontro">
+
+                    <label>Data:</label>
+                    <input type="date" id="edit-data" class="input-admin">
+
+                    <div class="form-group">
+                        <label for="arquivo-foto">Fazer Upload de Foto/Vídeo:</label>
+                        <input type="file" id="arquivo-foto" accept="image/*, video/mp4" class="input-form">
+                    </div>
+
+                    <label>Descrição:</label>
+                    <textarea id="edit-desc" class="input-admin text-area" rows="4"
+                        placeholder="Escreva sobre esse momento..."></textarea>
+                </div>
+
+                <div class="botoes-fixos">
+                    <button id="btn-cancelar-edit" class="btn-cancelar ">Cancelar</button>
+                    <button id="btn-salvar-momento" class="btn-salvar ">Salvar
+                        Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmacao-modal" class="modal hidden" style="z-index: 4000;">
+        <div class="modal-content modal-content-con">
+            <h3 id="confirmacao-titulo"
+                style="color: #8d0036; font-family: Lemon; font-size: 2rem; margin-bottom: 15px;">Atenção</h3>
+            <p id="confirmacao-mensagem"
+                style="margin-bottom: 25px; font-size: 1.2rem; color: #333; font-weight: bold; text-align: center;"></p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button id="btn-confirmar-sim" class="btn-escolha btn-sim"
+                    style="padding: 10px 30px; font-size: 1.2rem; width: 100%;">Sim</button>
+                <button id="btn-confirmar-nao" class="btn-escolha btn-nao"
+                    style="padding: 10px 30px; font-size: 1.2rem; width: 100%; position: static;">Não</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/menu.js"></script>
+    <script type="module" src="assets/js/util.js"></script>
+</body>
+
+</html>
