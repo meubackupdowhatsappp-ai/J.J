@@ -15,7 +15,7 @@ html {
 
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  background-color: #F2CBB0;
+  background-color: #ffbcd6;
   overscroll-behavior-y: none;
 }
 
@@ -35,17 +35,17 @@ body {
 
 /* Parte "deslizante" da barra */
 ::-webkit-scrollbar-thumb {
-  background: rgb(255, 171, 62);
+  background: #8d0036;
 }
 
 @media (hover: hover) {
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(255, 181, 84);
+    background: #a02353;
   }
 }
 
 .webkit-scrollbar-thumb.active-effect {
-  background: rgb(255, 181, 84);
+  background: #8d0036;
 }
 
 /* =========================================
@@ -100,7 +100,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   /* Ocupa a tela toda */
-  background-image: url('https://i.ibb.co/xqgSBwQz/Chat-GPT-Image-30-de-mai-de-2026-15-59-54.png');
+  background-image: url('https://i.ibb.co/KxwfW5Mh/Chat-GPT-Image-30-de-mai-de-2026-16-42-26.png');
   /* Sua imagem de fundo */
   background-size: cover;
   overflow: hidden;
@@ -218,11 +218,11 @@ header {
 }
 
 .menu:hover {
-  color: #e77b1c;
+  color: #a02353;
 }
 
 .menu:active {
-  color: #DB6600;
+  color: #8d0036;
 }
 
 /* Base para todos os elementos soltos */
@@ -905,63 +905,7 @@ header {
 
 .btn-ler-mais:hover {
   color: #a02353;
-}
 
-/* Pedido & Cronômetro */
-
-.cronometro-body {
-  background-image: url('https://i.ibb.co/tTdVCgfY/edited-photo.png');
-  background-size: cover;
-  overflow: hidden;
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden;
-}
-
-.tela-centro {
-  height: 90vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.tela-centro-poe {
-  position: static;
-  gap: 2rem;
-  font-family: Lemon, Arial, Helvetica, sans-serif;
-}
-
-.subtitulo-poe {
-  font-size: 2rem;
-}
-
-.titulo-poe {
-  color: #8d0036;
-  font-size: 5rem;
-  display: flex;
-  width: 100%;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.btn-iniciar-poe {
-  position: static;
-  bottom: auto;
-  right: auto;
-}
-
-.tela-centro-princ {
-  height: 75vh;
-  height: 75dvh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 /* Telas do Pedido*/
@@ -1021,114 +965,8 @@ header {
   font-family: Lemon, Arial, Helvetica, sans-serif;
 }
 
-.titulo-cro {
-  color: #DB6600;
-  font-size: 5.8vw;
-}
 
-
-
-/* Cronômetro */
-
-.borboleta-cro {
-  top: 22%;
-  right: 5%;
-  width: 240px;
-  animation: anirec 2s infinite steps(2);
-  animation-delay: 0.4s;
-}
-
-.fita-cro {
-  top: 30%;
-  left: 5%;
-  rotate: 18deg;
-  width: 160px;
-  animation: anirec3 1s infinite steps(1);
-  animation-delay: 0.2s;
-}
-
-.cassete-cro {
-  top: 58%;
-  right: 15%;
-  width: 200px;
-  rotate: -18deg;
-  animation: anirec2 1s infinite steps(1);
-}
-
-.laranja-cro {
-  bottom: 28%;
-  left: 15%;
-  width: 160px;
-  rotate: -15deg;
-  animation: anirec2 1s infinite steps(1);
-  animation-delay: 0.1s;
-}
-
-.estrela-cro {
-  bottom: 5%;
-  left: 5%;
-  width: 160px;
-  animation: anirec3 1s infinite steps(1);
-  animation-delay: 0.7s;
-}
-
-.cronometro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.subtitulo-crono {
-  font-family: 'Inter', sans-serif;
-  color: #d95d13;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.cronometro-container {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.4);
-  padding: 30px 50px;
-  font-variant-numeric: tabular-nums;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.time-block {
-  display: flex;
-  align-items: baseline;
-}
-
-.big-time .time-val {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #d95d13;
-}
-
-.big-time .time-label {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #555;
-  margin-left: 5px;
-}
-
-.small-time .time-val {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #e96d25;
-}
-
-.small-time .time-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #777;
-  margin-left: 3px;
-}
+/* MODAIS */
 
 /* Moment Edit Button */
 
