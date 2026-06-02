@@ -23,7 +23,7 @@
     }
 
     .titulo-poe {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 8vw;
     }
 }
@@ -47,7 +47,7 @@
     }
 
     .titulo-poe {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 8vw;
     }
 }
@@ -116,7 +116,7 @@
         top: 10%;
         right: 28%;
         width: 17%;
-        border: 5px solid #d95d13;
+        border: 5px solid #8d0036;
         /* A bordinha laranja */
         border-radius: 5px;
 
@@ -126,7 +126,17 @@
         top: 40%;
         right: 8%;
         width: 17%;
-        border: 5px solid #d95d13;
+        border: 5px solid #8d0036;
+        /* A bordinha laranja */
+        border-radius: 5px;
+
+    }
+
+    .foto3 {
+        top: 55%;
+        right: 18%;
+        width: 18%;
+        border: 5px solid #8d0036;
         /* A bordinha laranja */
         border-radius: 5px;
 
@@ -194,10 +204,18 @@
         z-index: 5;
     }
 
+    .foto3 {
+        top: 58%;
+        right: 60%;
+        transform: translateX(95%) rotate(8deg);
+        width: 250px;
+        z-index: 6;
+    }
+
     /* Ajuste dos adesivos para não poluir a tela */
     .gato {
-        top: 10%;
-        left: 2%;
+        top: 45%;
+        left: 70%;
         width: 25%;
     }
 
@@ -284,10 +302,18 @@
         z-index: 5;
     }
 
+    .foto3 {
+        top: 58%;
+        right: 60%;
+        transform: translateX(95%) rotate(8deg);
+        width: 230px;
+        z-index: 6;
+    }
+
     /* Ajuste dos adesivos para não poluir a tela */
     .gato {
-        top: 10%;
-        left: 2%;
+        top: 45%;
+        left: 70%;
         width: 20%;
     }
 
@@ -326,8 +352,8 @@
 @media screen and (max-width: 766px) {
 
     .gato {
-        top: 10%;
-        left: 2%;
+        top: 45%;
+        left: 70%;
         width: 28%;
     }
 
@@ -390,7 +416,7 @@
     }
 
     .titulo-poe {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 9vw;
     }
 
@@ -399,6 +425,10 @@
     }
 
     .foto2 {
+        width: 220px;
+    }
+
+    .foto3 {
         width: 220px;
     }
 
@@ -428,13 +458,13 @@
     }
 
     .titulo-poe {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 9.5vw;
     }
 
     .gato {
-        top: 12%;
-        left: 1%;
+        top: 45%;
+        left: 73%;
         width: 30%;
     }
 
@@ -493,7 +523,7 @@
     }
 
     .titulo-poe {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 3.5rem;
     }
 
@@ -507,10 +537,13 @@
         width: 230px;
     }
 
+    .foto3 {
+        top: 50%;
+        width: 230px;
+    }
+
     .gato {
-        top: 12%;
-        left: -2%;
-        width: 30%;
+        display: none;
     }
 
     .borboleta {
@@ -522,7 +555,7 @@
     .cassete {
         top: 30%;
         right: 26%;
-        width: 130px;
+        width: 13px;
     }
 
     .estrela {
@@ -593,6 +626,11 @@
         width: 215px;
     }
 
+    .foto3 {
+        top: 50%;
+        width: 215px;
+    }
+
     .cassete {
         top: 30%;
         right: 26%;
@@ -651,6 +689,11 @@
     }
 
     .foto2 {
+        top: 48%;
+        width: 205px;
+    }
+
+    .foto3 {
         top: 48%;
         width: 205px;
     }
@@ -770,6 +813,11 @@
         top: 48%;
         width: 190px;
     }
+
+    .foto3 {
+        top: 48%;
+        width: 190px;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -796,6 +844,11 @@
     }
 
     .foto2 {
+        top: 48%;
+        width: 190px;
+    }
+
+    .foto3 {
         top: 48%;
         width: 190px;
     }
@@ -865,6 +918,11 @@
         width: 200px;
     }
 
+    .foto3 {
+        top: 50%;
+        width: 200px;
+    }
+
     .subtitulo {
         font-size: 0.98rem;
     }
@@ -924,6 +982,11 @@
     }
 
     .foto2 {
+        top: 50%;
+        width: 195px;
+    }
+
+    .foto3 {
         top: 50%;
         width: 195px;
     }
@@ -992,6 +1055,11 @@
         width: 186px;
     }
 
+    .foto3 {
+        top: 50%;
+        width: 186px;
+    }
+
     .subtitulo {
         font-size: 0.9rem;
     }
@@ -1045,7 +1113,7 @@
 
     .menu {
         font-size: 2.2rem;
-        color: #DB6600;
+        color: #8d0036;
         cursor: pointer;
         font-weight: bold;
         transition: all .4s;
@@ -1076,6 +1144,11 @@
     }
 
     .foto2 {
+        top: 50%;
+        width: 200px;
+    }
+
+    .foto3 {
         top: 50%;
         width: 200px;
     }
@@ -1126,6 +1199,11 @@
         width: 190px;
     }
 
+    .foto3 {
+        top: 49%;
+        width: 190px;
+    }
+
     .cassete {
         top: 30%;
         right: 26%;
@@ -1162,7 +1240,7 @@
 
     .menu {
         font-size: 2.2rem;
-        color: #DB6600;
+        color: #8d0036;
         cursor: pointer;
         font-weight: bold;
         transition: all .4s;
@@ -1194,6 +1272,11 @@
         top: 49%;
         width: 175px;
     }
+
+    .foto3 {
+        top: 49%;
+        width: 175px;
+    }
 }
 
 @media screen and (max-width: 345px) and (max-height: 585px) {
@@ -1206,7 +1289,7 @@
 
     .menu {
         font-size: 2.2rem;
-        color: #DB6600;
+        color: #8d0036;
         cursor: pointer;
         font-weight: bold;
         transition: all .4s;
@@ -1269,6 +1352,11 @@
         top: 49%;
         width: 165px;
     }
+
+    .foto3 {
+        top: 49%;
+        width: 165px;
+    }
 }
 
 @media screen and (max-width: 345px) and (max-height: 588px) {
@@ -1281,7 +1369,7 @@
 
     .menu {
         font-size: 2.2rem;
-        color: #DB6600;
+        color: #8d0036;
         cursor: pointer;
         font-weight: bold;
         transition: all .4s;
@@ -1310,6 +1398,11 @@
     }
 
     .foto2 {
+        top: 49%;
+        width: 160px;
+    }
+
+    .foto3 {
         top: 49%;
         width: 160px;
     }
@@ -2167,6 +2260,10 @@
         padding: 0 10px;
         max-width: 300px;
     }
+
+    .admin-btn {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 375px) and (max-height: 755px) {
@@ -2511,7 +2608,7 @@
 
 @media screen and (max-width: 875px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 6.2vw;
     }
 
@@ -2592,7 +2689,7 @@
 
 @media screen and (max-width: 650px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 2.6rem;
     }
 
@@ -2684,7 +2781,7 @@
 
 @media screen and (max-width: 560px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 2.3rem;
     }
 
@@ -2766,14 +2863,14 @@
 
 @media screen and (max-width:500px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 2.1rem;
     }
 }
 
 @media screen and (max-width: 475px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 2rem;
     }
 
@@ -2845,7 +2942,7 @@
 
 @media screen and (max-width: 430px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 1.8rem;
     }
 
@@ -2913,7 +3010,7 @@
 
 @media screen and (max-width: 390px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 1.6rem;
     }
 
@@ -2981,7 +3078,7 @@
 
 @media screen and (max-width: 365px) {
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 1.5rem;
     }
 
@@ -3053,7 +3150,7 @@
     }
 
     .titulo {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 7.7vw;
     }
 
@@ -3062,7 +3159,7 @@
     }
 
     .titulo-poe {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 6vw;
     }
 
@@ -3075,7 +3172,7 @@
     }
 
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 5.6vw;
     }
 
@@ -3125,6 +3222,10 @@
         top: 38%;
     }
 
+    .foto3 {
+        top: 38%;
+    }
+
     .btn-iniciar {
         bottom: 8%;
         right: 10%;
@@ -3137,7 +3238,7 @@
     }
 
     .titulo {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 7vw;
     }
 
@@ -3150,7 +3251,7 @@
     }
 
     .titulo-cro {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 5.6vw;
     }
 
@@ -3220,6 +3321,11 @@
         width: 15%;
     }
 
+    .foto3 {
+        top: 38%;
+        width: 15%;
+    }
+
     .btn-iniciar {
         bottom: 2%;
         right: 10%;
@@ -3235,7 +3341,7 @@
     }
 
     .titulo {
-        color: #DB6600;
+        color: #8d0036;
         font-size: 7vw;
     }
 
@@ -3273,6 +3379,10 @@
     }
 
     .foto2 {
+        top: 35%;
+    }
+
+    .foto3 {
         top: 35%;
     }
 

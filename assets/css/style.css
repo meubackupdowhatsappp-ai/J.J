@@ -164,6 +164,8 @@ header {
   color: #8d0036;
   text-decoration: none;
   transition: all .4s;
+  -webkit-text-stroke-width: 1px; /* Espessura do contorno */
+  -webkit-text-stroke-color: #8d0036;  /* Cor do contorno */
 }
 
 .nav-item a:hover {
@@ -948,7 +950,7 @@ header {
 }
 
 .btn-sim:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .btn-nao {
@@ -1327,7 +1329,7 @@ header {
 }
 
 .momento-card-acoes button:hover {
-  background: #ffae6885;
+  background: #ffc9de;
 }
 
 /* Layout de Edição Full */
@@ -1435,4 +1437,62 @@ header {
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+/* =========================================
+   BOTÃO DE UPLOAD 100% E SEM TEXTO
+   ========================================= */
+
+input[type="file"] {
+    width: 100%;
+    height: 60px; /* Defina a altura que desejar para a área do botão */
+    color: transparent; /* Esconde o texto "Nenhum arquivo escolhido" */
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden; /* Garante que o botão interno não saia das bordas */
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    background-color: #8d0036;
+}
+
+input[type="file"]:hover {
+    background-color: #ffc9de;
+}
+
+input[type="file"] {
+    background-color: #8d0036;
+}
+
+/* Estiliza o botão interno para cobrir todo o input */
+input[type="file"]::file-selector-button {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #8d0036;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+/* Efeito ao passar o mouse no botão que agora ocupa tudo */
+input[type="file"]::file-selector-button:hover {
+    background-color: #a02353;
+}
+
+/* Ajuste para navegadores Webkit (Chrome/Safari) 
+   para garantir que o texto não apareça de jeito nenhum */
+input[type="file"]::-webkit-file-upload-button {
+    width: 100%;
+    height: 100%;
 }
