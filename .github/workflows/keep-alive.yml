@@ -2,7 +2,7 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # roda a cada 6 horas
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,5 +13,5 @@ jobs:
       - name: Ping Supabase
         run: |
           curl -X GET "https://wiagaepfttjhxrsrrwkc.supabase.co/rest/v1/ping" \
-          -H "apikey: ${{ secrets.SUPABASE_KEY }}"
+          -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
           -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
