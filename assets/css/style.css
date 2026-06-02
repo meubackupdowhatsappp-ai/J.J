@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&family=Orbitron:wght@400..900&display=swap');
@@ -1597,4 +1598,1605 @@ header {
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
+=======
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemon&family=Orbitron:wght@400..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: #F2CBB0;
+  overscroll-behavior-y: none;
+}
+
+.body {
+  background-image: url('https://i.ibb.co/KxwfW5Mh/Chat-GPT-Image-30-de-mai-de-2026-16-42-26.png');
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Fundo da barra (trilho) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Parte "deslizante" da barra */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 171, 62);
+}
+
+@media (hover: hover) {
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 181, 84);
+  }
+}
+
+.webkit-scrollbar-thumb.active-effect {
+  background: rgb(255, 181, 84);
+}
+
+/* =========================================
+   TELA DE LOADING GLOBAL
+   ========================================= */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Puxando o mesmo estilo do seu .body atual */
+    background-color: #F2CBB0;
+    background-image: url('https://i.ibb.co/KxwfW5Mh/Chat-GPT-Image-30-de-mai-de-2026-16-42-26.png');
+    background-size: cover;
+    background-position: center;
+    
+    /* Centraliza a bolinha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 9999; /* Garante que cubra o menu e os modais */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Classe que o JS vai adicionar para fazer o fade-out suave */
+.esconder-loading {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Bolinha girando com as cores do seu projeto */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(219, 102, 0, 0.2); /* Laranja transparente */
+    border-top: 6px solid #8d0036; /* Laranja sólido (#DB6600) */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* O Contêiner Principal */
+.home-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Ocupa a tela toda */
+  background-image: url('https://i.ibb.co/xqgSBwQz/Chat-GPT-Image-30-de-mai-de-2026-15-59-54.png');
+  /* Sua imagem de fundo */
+  background-size: cover;
+  overflow: hidden;
+  /* Evita que elementos vazem e criem barra de rolagem */
+}
+
+/* O Cabeçalho (Posicionamento normal com Flexbox) */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 5%;
+  position: relative;
+  z-index: 10;
+  /* Fica acima das decorações */
+}
+
+.nav-menu {
+  position: absolute;
+  top: 0;
+  right: -30%;
+  width: 25%;
+  height: 100vh;
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: end;
+  background-image: url('https://i.ibb.co/KxwfW5Mh/Chat-GPT-Image-30-de-mai-de-2026-16-42-26.png');
+  /* Sua imagem de fundo */
+  background-size: cover;
+  border-left: 5px solid #8d0036;
+  transition: all .4s;
+}
+
+.show-menu .open-menu {
+  opacity: 0;
+}
+
+.show-menu .nav-menu {
+  right: 0;
+}
+
+.nav-list {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 20%;
+}
+
+.nav-item {
+  width: 95%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2;
+  border-bottom: 3px solid #8d0036;
+}
+
+.nav-item a {
+  color: #8d0036;
+  text-decoration: none;
+  transition: all .4s;
+}
+
+.nav-item a:hover {
+  color: #a02353;
+}
+
+.link-logo {
+  text-decoration: none;
+}
+
+.link-logo:hover .logo-ms {
+  color: #a02353;
+}
+
+.link-logo:active .logo-ms {
+  color: #8d0036;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all .4s;
+  color: black;
+}
+
+.logo-ms {
+  color: #8d0036;
+  transition: all .4s;
+}
+
+.menu {
+  position: absolute;
+  right: 5%;
+  top: 25%;
+  font-size: 2.8rem;
+  color: #8d0036;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all .4s;
+}
+
+.close-menu {
+  position: absolute;
+  right: 4%;
+  top: 0;
+  font-size: 4rem;
+  transition: all .4s;
+}
+
+.close-menu:hover {
+  rotate: 90deg;
+}
+
+.menu:hover {
+  color: #e77b1c;
+}
+
+.menu:active {
+  color: #DB6600;
+}
+
+/* Base para todos os elementos soltos */
+.elemento {
+  position: absolute;
+  z-index: 1;
+  /* Ficam atrás do texto */
+}
+
+/* Posicionando cada elemento com Porcentagem (Exemplos) */
+.gato {
+  top: -10%;
+  left: 5%;
+  width: 15%;
+  /* A largura em % garante que ele diminua em telas menores */
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.3s;
+}
+
+.flor {
+  top: 5%;
+  left: 30%;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.1s;
+}
+
+.cassete {
+  display: none;
+  top: 5%;
+  right: 5%;
+  width: 13%;
+  animation: anirec 2s infinite steps(2);
+  animation-delay: 0.4s;
+}
+
+.fita {
+  top: 22%;
+  right: 16%;
+  rotate: 18deg;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.2s;
+}
+
+.laranja {
+  bottom: 5%;
+  left: 4%;
+  width: 8%;
+  rotate: -15deg;
+  animation: anirec2 1s infinite steps(1);
+  animation-delay: 0.1s;
+}
+
+.estrela {
+  bottom: 10%;
+  left: 20%;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.7s;
+}
+
+.disco {
+  bottom: 5%;
+  left: 36%;
+  width: 8%;
+  animation: anirec 2s infinite steps(2);
+}
+
+@keyframes anirec {
+  0% {
+    rotate: 0deg;
+  }
+
+  30% {
+    rotate: 10deg
+  }
+
+  80% {
+    rotate: 30deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes anirec2 {
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: -10deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes anirec3 {
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 10deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+.minhoca {
+  bottom: 10%;
+  left: 52%;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.2s;
+}
+
+.foto1 {
+  top: 10%;
+  right: 28%;
+  width: 18%;
+  border: 5px solid #8d0036;
+  /* A bordinha laranja */
+  border-radius: 5px;
+
+}
+
+.foto2 {
+  top: 25%;
+  right: 3%;
+  width: 18%;
+  border: 5px solid #8d0036;
+  /* A bordinha laranja */
+  border-radius: 5px;
+
+}
+
+.foto3 {
+  top: 55%;
+  right: 18%;
+  width: 18%;
+  border: 5px solid #8d0036;
+  /* A bordinha laranja */
+  border-radius: 5px;
+
+}
+
+/* Textos Centrais */
+.textos-centrais {
+  position: absolute;
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  top: 26%;
+  left: 5%;
+}
+
+.subtitulo {
+  font-size: 2.5vw;
+}
+
+.titulo {
+  color: #8d0036;
+  font-size: 8vw;
+}
+
+/* Botão no canto inferior direito */
+.btn-iniciar {
+  position: absolute;
+  text-decoration: none;
+  bottom: 5%;
+  right: 5%;
+  background-color: #8d0036;
+  color: white;
+  padding: 20px 90px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .4s;
+  animation: anibtn 3s ease-in-out infinite;
+}
+
+@keyframes anibtn {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.05;
+    box-shadow: 0px 0px 15px 2px #b80046;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+.btn-iniciar:hover {
+  background-color: #a02353;
+}
+
+.btn-iniciar:active {
+  background-color: #8d0036;
+}
+
+/* MOMENTOS */
+
+/* Botão de Música Flutuante */
+.btn-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8d0036;
+  /* Cor que combina com o seu tema */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px #b80046;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s;
+}
+
+.btn-musica:hover {
+  transform: scale(1.05);
+}
+
+.header-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  background-image: url('https://i.ibb.co/KxwfW5Mh/Chat-GPT-Image-30-de-mai-de-2026-16-42-26.png');
+  /* Sua imagem de fundo */
+  background-size: cover;
+  overflow: hidden;
+  /* Evita que elementos vazem e criem barra de rolagem */
+}
+
+.moment-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.moment-title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+}
+
+.moment-line {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hr-moment {
+  rotate: 50%;
+  width: 100%;
+  height: 5px;
+  background-image: linear-gradient(to right, #8d0036 50%, transparent 0%);
+  background-position: bottom;
+  background-size: 20px 100%;
+  border: none;
+}
+
+
+.laranja-m {
+  width: 8%;
+  animation: anirec2 1s infinite steps(1);
+  animation-delay: 0.1s;
+}
+
+.title-moment-loading {
+  color: #8d0036;
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+}
+
+.moment-content {
+  width: 100%;
+  height: auto;
+  gap: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.title-moment-content {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+  font-size: 1.3rem;
+  width: 100%;
+  height: auto;
+}
+
+.title-moment-content h3 {
+  text-align: center;
+}
+
+.info-moment {
+  width: 70%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+}
+
+.foto-moment {
+  width: 30%;
+  border: 5px solid #8d0036;
+  border-radius: 5px;
+}
+
+.moment-description {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+/* Container de Navegação */
+.moment-navigation-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Setas de navegação */
+.nav-arrow {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  color: #8d0036;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: color .3s, transform .3s;
+}
+
+.nav-arrow:hover {
+  color: #8d0036;
+  transform: scale(1.1);
+}
+
+.nav-arrow:active {
+  transform: scale(0.9);
+}
+
+/* Esconde as seções dinamicamente */
+.hidden {
+  display: none !important;
+}
+
+.info-moment {
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  max-width: 100%;
+}
+
+.foto-moment {
+  width: auto;
+  height: 40vh;
+  border: 5px solid #8d0036;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.moment-description {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 70%;
+  height: auto;
+  max-height: 40vh;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.arrow-left {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+}
+
+.gato-m {
+  top: 10%;
+  left: 5%;
+  width: 15%;
+  /* A largura em % garante que ele diminua em telas menores */
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.3s;
+}
+
+.flor-m {
+  top: 5%;
+  left: 45%;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.1s;
+}
+
+.borboleta-m {
+  top: 5%;
+  right: 5%;
+  width: 13%;
+  animation: anirec 2s infinite steps(2);
+  animation-delay: 0.4s;
+}
+
+.fita-m {
+  top: 22%;
+  right: 14%;
+  rotate: 18deg;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.2s;
+}
+
+.cassete-m {
+  top: 50%;
+  right: 10%;
+  width: 10%;
+  rotate: -18deg;
+  animation: anirec2 1s infinite steps(1);
+}
+
+.laranja-m {
+  bottom: 15%;
+  left: 10%;
+  width: 8%;
+  rotate: -15deg;
+  animation: anirec2 1s infinite steps(1);
+  animation-delay: 0.1s;
+}
+
+.estrela-m {
+  bottom: 10%;
+  left: 25%;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.7s;
+}
+
+.disco-m {
+  bottom: 5%;
+  left: 48%;
+  width: 8%;
+  animation: anirec 2s infinite steps(2);
+}
+
+.minhoca-m {
+  bottom: 8%;
+  left: 72%;
+  width: 8%;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.2s;
+}
+
+/* ========================================= */
+/* ANIMAÇÕES DA LINHA DO TEMPO               */
+/* ========================================= */
+
+/* Adicione .cronometro-section aqui */
+/* Adicione os seletores abaixo para que eles aceitem a animação de deslizar */
+/*.moment-line,
+.cronometro-section,
+.moment-title,
+.moment-content {
+  transition: transform 0.4s ease;
+}*/
+
+/* --- Classes de Saída (Fade Out) --- */
+.fade-out-left {
+  animation: fadeOutLeft 0.4s ease forwards;
+}
+
+.fade-out-right {
+  animation: fadeOutRight 0.4s ease forwards;
+}
+
+/* --- Classes de Entrada (Fade In) --- */
+.fade-in-from-right {
+  animation: fadeInRight 0.4s ease;
+}
+
+.fade-in-from-left {
+  animation: fadeInLeft 0.4s ease;
+}
+
+/* Keyframes para as animações de entrada */
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Novos Keyframes para a saída */
+@keyframes fadeOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ========================================= */
+/* ANIMAÇÃO CONTÍNUA DA LINHA TEMPORAL       */
+/* ========================================= */
+
+.scroll-line-left .hr-moment {
+  /* Tempo total: saída (400ms) + entrada (400ms) = 0.8s */
+  animation: scrollBgLeft 0.8s ease-in-out;
+}
+
+.scroll-line-right .hr-moment {
+  animation: scrollBgRight 0.8s ease-in-out;
+}
+
+/* Como o seu background-size tem width de 20px, mover um múltiplo exato 
+   de 20px (como 200px) garante que a animação não dê um "pulo" no final, 
+   criando um loop perfeito e a sensação de viagem rápida */
+@keyframes scrollBgLeft {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: -20%;
+  }
+}
+
+@keyframes scrollBgRight {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: 20%;
+  }
+}
+
+/* PRÉ CRONÔMETRO */
+
+/* Estilo da seção final */
+.cronometro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+  gap: 2rem;
+  text-align: center;
+}
+
+.titulo-final {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+  font-size: 3rem;
+}
+
+.texto-final {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Correção do botão na tela final do Cronômetro */
+.cronometro-section .btn-iniciar {
+  position: static;
+  /* Remove a posição absoluta global */
+  animation: none;
+  /* Opcional: remove o efeito de pulsar se você quiser ele paradinho aqui */
+}
+
+/* Atualize a sua classe .moment-description para ocupar 100% e adicione o desc-wrapper */
+.desc-wrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Coloca o botão Ler mais na direita */
+}
+
+.moment-description {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 100%;
+  /* Mudou de 70% para 100% (o limite agora é do wrapper) */
+  height: auto;
+  max-height: 40vh;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Efeito de fade sutil no texto quando ele for cortado */
+.moment-description.texto-truncado {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.btn-ler-mais {
+  color: #8d0036;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  margin-top: -10px;
+  /* Sobe o botão pra encaixar no fade */
+  z-index: 10;
+  transition: color 0.3s;
+}
+
+.btn-ler-mais:hover {
+  color: #a02353;
+}
+
+/* Pedido & Cronômetro */
+
+.cronometro-body {
+  background-image: url('https://i.ibb.co/tTdVCgfY/edited-photo.png');
+  background-size: cover;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.tela-centro {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tela-centro-poe {
+  position: static;
+  gap: 2rem;
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+}
+
+.subtitulo-poe {
+  font-size: 2rem;
+}
+
+.titulo-poe {
+  color: #8d0036;
+  font-size: 5rem;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-iniciar-poe {
+  position: static;
+  bottom: auto;
+  right: auto;
+}
+
+.tela-centro-princ {
+  height: 75vh;
+  height: 75dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Telas do Pedido*/
+
+.titulo-pedido {
+  font-family: 'Lemon', cursive;
+  /* Ou a fonte que preferir */
+  font-size: 3rem;
+  color: #d95d13;
+  margin-bottom: 20px;
+}
+
+.texto-pedido {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Botões do Pedido */
+.botoes-pedido {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.btn-escolha {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-sim {
+  background-color: #8d0036;
+  color: white;
+}
+
+.btn-sim:hover {
+  transform: scale(1.1);
+}
+
+.btn-nao {
+  background-color: #333;
+  color: white;
+  position: relative;
+  /* Necessário para a fuga funcionar depois */
+  z-index: 100;
+}
+
+/* Tela do Cronômetro */
+
+.textos-centrais-cro {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+}
+
+.titulo-cro {
+  color: #DB6600;
+  font-size: 5.8vw;
+}
+
+
+
+/* Cronômetro */
+
+.borboleta-cro {
+  top: 22%;
+  right: 5%;
+  width: 240px;
+  animation: anirec 2s infinite steps(2);
+  animation-delay: 0.4s;
+}
+
+.fita-cro {
+  top: 30%;
+  left: 5%;
+  rotate: 18deg;
+  width: 160px;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.2s;
+}
+
+.cassete-cro {
+  top: 58%;
+  right: 15%;
+  width: 200px;
+  rotate: -18deg;
+  animation: anirec2 1s infinite steps(1);
+}
+
+.laranja-cro {
+  bottom: 28%;
+  left: 15%;
+  width: 160px;
+  rotate: -15deg;
+  animation: anirec2 1s infinite steps(1);
+  animation-delay: 0.1s;
+}
+
+.estrela-cro {
+  bottom: 5%;
+  left: 5%;
+  width: 160px;
+  animation: anirec3 1s infinite steps(1);
+  animation-delay: 0.7s;
+}
+
+.cronometro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitulo-crono {
+  font-family: 'Inter', sans-serif;
+  color: #d95d13;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cronometro-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 30px 50px;
+  font-variant-numeric: tabular-nums;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.time-block {
+  display: flex;
+  align-items: baseline;
+}
+
+.big-time .time-val {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #d95d13;
+}
+
+.big-time .time-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  margin-left: 5px;
+}
+
+.small-time .time-val {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e96d25;
+}
+
+.small-time .time-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #777;
+  margin-left: 3px;
+}
+
+/* Moment Edit Button */
+
+.moment-edit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+
+.moment-edit-button {
+  border: none;
+  background-color: #8d0036;
+  border-radius: 14px;
+  padding: 40px 0px;
+  width: 650px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all .4s;
+  cursor: pointer;
+  animation: anibtn 3s ease-in-out infinite;
+}
+
+@keyframes anibtn {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.02;
+    box-shadow: 0px 0px 15px 2px #b80046;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+.moment-edit-button:hover {
+  background-color: #a02353;
+}
+
+.moment-edit-button:active {
+  background-color: #8d0036;
+}
+
+/* CD Button */
+
+.edit-msc {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  bottom: 5%;
+  right: 5%;
+}
+
+.edit-msc-button {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all .4s;
+  animation: anibtn2 3s ease-in-out infinite;
+}
+
+@keyframes anibtn2 {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.02;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+.edit-msc-button:hover {
+  transform: scale(1.1);
+
+}
+
+.edit-msc-button:active {
+  transform: none;
+}
+
+.edit-msc-img {
+  width: 100px;
+}
+
+/* Efeito para botões sem acesso de Admin */
+.btn-bloqueado {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+/* ========================================= */
+/* ESTILOS DO MODAL LER MAIS                 */
+/* ========================================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.modal-content {
+  background-color: #ffbcd6;
+  padding: 40px;
+  border-radius: 10px;
+  border: 5px solid #8d0036;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  /* Se a história for gigante, o modal ganha rolagem */
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal.content.con {
+  max-width: 400px;
+  text-align: center;
+  border-color: #8d0036;
+}
+
+.modal-musica-add {
+  max-width: 700px;
+}
+
+.modal-body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3rem;
+  color: #8d0036;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.close-modal:hover {
+  transform: scale(1.1);
+  color: #a02353;
+}
+
+.modal-midia {
+  max-width: 100%;
+  max-height: 40vh;
+  border: 4px solid #8d0036;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.modal-descricao {
+  font-family: Lemon, Arial, Helvetica, sans-serif;
+  color: #8d0036;
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 100%;
+}
+
+/* Modais de Admin */
+.modal-login,
+.modal-musica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content
+/* Modal Log */
+
+.input-admin {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid #8d0036;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  background-color: #ffbcd6;
+}
+
+/* Playlist Add */
+
+.upload-area {
+  width: 100%;
+  background: #ffbcd6;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #8d0036;
+}
+
+/* Playlist Edit */
+
+.lista-musicas {
+  width: 100%;
+  height: 30vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 5px;
+}
+
+.musica-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border-left: 5px solid #8d0036;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.musica-item.ativa {
+  background: #ffbcd6;
+  border-left: 5px solid #b80046;
+  /* Verde indicando que está tocando */
+}
+
+.musica-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.musica-nome {
+  font-weight: bold;
+  color: #333;
+}
+
+.musica-status {
+  font-size: 0.8rem;
+  color: #1f1f1f;
+}
+
+.musica-acoes {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-acao-musica {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn-acao-musica:hover {
+  transform: scale(1.08);
+}
+
+.btn-selecionar {
+  color: #a02353;
+}
+
+.btn-excluir {
+  color: #8d0036;
+}
+
+/* Modal Configurações */
+
+/* Grid de Momentos nas Configurações */
+.momentos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.momento-card {
+  background: #ffbcd6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  border: 2px solid #8d0036;
+  z-index: 1000;
+}
+
+.momento-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.momento-card-info {
+  padding: 8px;
+  font-size: 0.85rem;
+  text-align: left;
+  color: #333;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.momento-card-acoes {
+  display: flex;
+  border-top: 1px solid #8d0036;
+}
+
+.momento-card-acoes button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.4s;
+}
+
+.btn-edit-card {
+  color: #8d0036;
+  border-right: 1px solid #8d0036 !important;
+}
+
+.btn-del-card {
+  color: #ff4d4d;
+}
+
+.momento-card-acoes button:hover {
+  background: #ffae6885;
+}
+
+/* Layout de Edição Full */
+.modal-full {
+  max-width: 700px !important;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px !important;
+  /* Espaço para o botão voltar */
+}
+
+.modal-header-edit {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-voltar-seta {
+  background: none;
+  border: none;
+  color: #8d0036;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 2rem;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  padding-bottom: 80px;
+  padding-right: 2%;
+}
+
+.preview-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.preview-area img {
+  border-radius: 15px;
+  max-height: 250px;
+  object-fit: contain;
+  background: transparent;
+  border: 3px solid #8d0036;
+}
+
+.text-area {
+  resize: none;
+  width: 100%;
+  height: 30vh;
+}
+
+.campos-area label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #8d0036;
+}
+
+.botoes-fixos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffbcd6;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-top: 5px solid #8d0036;
+}
+
+.btn-cancelar {
+  background: #8d0036;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn-salvar {
+  background: #8d0036;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+>>>>>>> cbd75692b69b6d5217716a019b905cb3cb03fae4
 }
