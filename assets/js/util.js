@@ -241,7 +241,7 @@ window.selecionarMusica = async function(id) {
         await supabase.from('musicas_fundo').update({ selecionada: false }).neq('id', 0);
         await supabase.from('musicas_fundo').update({ selecionada: true }).eq('id', id);
         carregarListaMusicas();
-    } catch (err) { console.error(err); alert("Erro ao alterar a música."); }
+    } catch (err) { console.error(err); mostrarToast("Erro ao alterar a música."); }
 }
 
 window.excluirMusica = async function(id, url_arquivo) {
@@ -252,7 +252,7 @@ window.excluirMusica = async function(id, url_arquivo) {
         const fileName = url_arquivo.split('/').pop();
         await supabase.storage.from('Musicas').remove([fileName]);
         carregarListaMusicas();
-    } catch (err) { console.error(err); alert("Erro ao excluir a música."); }
+    } catch (err) { console.error(err); mostrarToast("Erro ao excluir a música."); }
 }
 
 /* ==============================================================
@@ -353,12 +353,12 @@ if (document.getElementById('btn-salvar-momento')) {
 
         // Validação básica de texto
         if (!tituloMomento || !dataMomento || !desc) {
-            return alert("Preencha título, data e descrição!");
+            return mostrarToast("Preencha título, data e descrição!");
         }
 
         // Se for um novo momento (não tem momentoSendoEditado) e não selecionou arquivo, barra o envio
         if (!momentoSendoEditado && (!arquivoInput || arquivoInput.files.length === 0)) {
-            return alert("Você precisa selecionar um arquivo de foto ou vídeo!");
+            return mostrarToast("Você precisa selecionar um arquivo de foto ou vídeo!");
         }
 
         try {
@@ -412,7 +412,7 @@ if (document.getElementById('btn-salvar-momento')) {
             
         } catch (err) { 
             console.error(err); 
-            alert("Erro ao salvar momento. Verifique o console."); 
+            mostrarToast("Erro ao salvar momento. Verifique o console."); 
         } finally {
             btnSalvar.innerText = "Salvar Momento";
             btnSalvar.disabled = false;
@@ -426,5 +426,37 @@ window.excluirMomento = async function(id) {
     try {
         await supabase.from('momentos').delete().eq('id', id);
         carregarMomentosGrid();
-    } catch (err) { alert("Erro ao excluir."); }
+    } catch (err) { mostrarToast("Erro ao excluir."); }
+}
+
+/* ==============================================================
+   SISTEMA DE NOTIFICAÇÕES (TOAST)
+============================================================== */
+function mostrarToast(mensagem, tipo = 'error') {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${tipo}`;
+
+    // Define o ícone com base no tipo usando o Remix Icon
+    let icone = 'ri-error-warning-line';
+    if (tipo === 'warning') icone = 'ri-alert-line';
+    if (tipo === 'success') icone = 'ri-checkbox-circle-line';
+
+    toast.innerHTML = `<i class="${icone}" style="font-size: 1.5rem;"></i> <span>${mensagem}</span>`;
+
+    container.appendChild(toast);
+
+    // Remove o toast suavemente após 3.5 segundos
+    setTimeout(() => {
+        toast.classList.add('toast-hide');
+        toast.addEventListener('animationend', () => {
+            toast.remove();
+        });
+    }, 3500);
 }
