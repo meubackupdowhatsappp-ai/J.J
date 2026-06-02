@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Importa o cliente do Supabase via CDN
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
@@ -381,7 +380,7 @@ if (modal) {
     });
 }
 
-=======
+
 // Importa o cliente do Supabase via CDN
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
@@ -763,5 +762,3 @@ if (modal) {
         }
     });
 }
-
->>>>>>> cbd75692b69b6d5217716a019b905cb3cb03fae4

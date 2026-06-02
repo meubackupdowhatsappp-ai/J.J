@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*=============== MENU HAMBÚRGUER ===============*/
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('open-menu');
@@ -34,7 +34,8 @@ window.addEventListener('load', function() {
             loadingScreen.style.display = 'none';
         }, 500); 
     }
-=======
+});
+
 /*=============== MENU HAMBÚRGUER ===============*/
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('open-menu');
@@ -70,5 +71,4 @@ window.addEventListener('load', function() {
             loadingScreen.style.display = 'none';
         }, 500); 
     }
->>>>>>> cbd75692b69b6d5217716a019b905cb3cb03fae4
 });

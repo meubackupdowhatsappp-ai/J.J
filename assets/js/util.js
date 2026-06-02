@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 // Configurações do Supabase (Usando a do util.js original)
@@ -428,7 +428,7 @@ window.excluirMomento = async function(id) {
         await supabase.from('momentos').delete().eq('id', id);
         carregarMomentosGrid();
     } catch (err) { alert("Erro ao excluir."); }
-=======
+}
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 // Configurações do Supabase (Usando a do util.js original)
@@ -858,5 +858,4 @@ window.excluirMomento = async function(id) {
         await supabase.from('momentos').delete().eq('id', id);
         carregarMomentosGrid();
     } catch (err) { alert("Erro ao excluir."); }
->>>>>>> cbd75692b69b6d5217716a019b905cb3cb03fae4
 }
