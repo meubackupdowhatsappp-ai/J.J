@@ -10,7 +10,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 let momentos = [];
 let currentIndex = 0;
 const PRELOAD_AMOUNT = 5; // Quantidade inicial de mídias para carregar antes de mostrar a tela
-const mediaCache = {};  
+const mediaCache = {};
 
 // Elementos da DOM
 const contentContainer = document.getElementById('moment-content');
@@ -58,21 +58,21 @@ function preloadMidias(startIndex, count) {
                 video.playsInline = true;
                 video.controls = true;
                 video.className = "elemento-m foto-moment"; // Já deixamos a classe pronta
-                
+
                 mediaCache[i] = video; // Salva no cofre
 
                 video.onloadeddata = () => verificarCarregamento();
-                video.onerror = () => verificarCarregamento(); 
+                video.onerror = () => verificarCarregamento();
             } else {
                 const img = new Image();
                 img.src = momento.midia_url;
                 img.className = "elemento-m foto-moment"; // Já deixamos a classe pronta
                 img.alt = "Foto do momento";
-                
+
                 mediaCache[i] = img; // Salva no cofre
 
                 img.onload = () => verificarCarregamento();
-                img.onerror = () => verificarCarregamento(); 
+                img.onerror = () => verificarCarregamento();
             }
         }
 
@@ -99,13 +99,13 @@ async function fetchMomentos() {
         if (error) throw error;
 
         momentos = data;
-        
+
         if (momentos.length > 0) {
             contentContainer.innerHTML = '<h3 class="title-moment-loading">Preparando as fotos e vídeos...</h3>';
-            
+
             // Espera carregar os primeiros 'PRELOAD_AMOUNT' itens na memória do celular
             await preloadMidias(0, PRELOAD_AMOUNT);
-            
+
             // Depois que carregou, renderiza o primeiro momento
             renderMomento(currentIndex);
         } else {
@@ -127,7 +127,7 @@ function formatarData(dataString) {
 function renderMomento(index) {
     const momento = momentos[index];
     const dataFormatada = formatarData(momento.data_momento);
-    
+
     // Injetamos o HTML sem a mídia, apenas com o container vazio id="media-container"
     contentContainer.innerHTML = `
         <div class="title-moment-content">
@@ -164,38 +164,46 @@ function renderMomento(index) {
     // Insere o elemento instantaneamente na tela!
     mediaContainer.insertBefore(elementoMidia, mediaContainer.firstChild);
 
+    // Esconde a seta da esquerda se for o primeiro momento
     if (index === 0) {
         btnPrev.style.visibility = 'hidden';
     } else {
         btnPrev.style.visibility = 'visible';
     }
 
+    // Esconde a seta da direita se for o ÚLTIMO momento cadastrado
+    if (index === momentos.length - 1) {
+        btnNext.style.visibility = 'hidden';
+    } else {
+        btnNext.style.visibility = 'visible';
+    }
+
     // LÓGICA DO "LER MAIS"
     setTimeout(() => {
         const descText = document.getElementById('desc-text');
         const btnLerMais = document.getElementById('btn-ler-mais');
-        
+
         if (descText && btnLerMais) {
             if (descText.scrollHeight > descText.clientHeight) {
                 descText.classList.add('texto-truncado');
                 btnLerMais.classList.remove('hidden');
-                
+
                 btnLerMais.addEventListener('click', () => {
                     abrirModal(momento);
                 });
             }
         }
-    }, 50); 
-}           
+    }, 50);
+}
 
 function changeMomentWithAnimation(direction) {
     // 1. Aplica a animação de SAÍDA (no conteúdo) e a de SCROLL (na linha)
     if (direction === 'next') {
         contentContainer.classList.add('fade-out-left');
-        momentLine.classList.add('scroll-line-left'); 
+        momentLine.classList.add('scroll-line-left');
     } else {
         contentContainer.classList.add('fade-out-right');
-        momentLine.classList.add('scroll-line-right'); 
+        momentLine.classList.add('scroll-line-right');
     }
 
     // 2. Espera a saída terminar (400ms)
@@ -216,7 +224,7 @@ function changeMomentWithAnimation(direction) {
         // 4. Limpa as classes depois que a animação acaba (mais 400ms)
         setTimeout(() => {
             contentContainer.classList.remove('fade-in-from-right', 'fade-in-from-left');
-            
+
             // Aqui paramos a animação contínua da linha
             momentLine.classList.remove('scroll-line-left', 'scroll-line-right');
         }, 400);
@@ -229,24 +237,23 @@ btnNext.addEventListener('click', () => {
     if (currentIndex < momentos.length - 1) {
         currentIndex++;
         changeMomentWithAnimation('next');
-        
-        // PRELOAD SILENCIOSO: Sempre que avançar, tenta carregar imagens futuras para nunca travar
-        preloadMidias(currentIndex + PRELOAD_AMOUNT - 1, 2); 
 
+        // PRELOAD SILENCIOSO
+        preloadMidias(currentIndex + PRELOAD_AMOUNT - 1, 2);
     } else {
         // Transição para a Secção Final (Cronómetro)
         contentContainer.classList.add('fade-out-left');
-        
-        momentLine.classList.add('fade-out-left'); 
+
+        momentLine.classList.add('fade-out-left');
         momentTitle.classList.add('fade-out-left');
 
         setTimeout(() => {
             momentSection.classList.add('hidden');
             cronometroSection.classList.remove('hidden');
-            
+
             // Removemos as classes de saída para limpar o estado
             contentContainer.classList.remove('fade-out-left');
-            momentLine.classList.remove('fade-out-left'); 
+            momentLine.classList.remove('fade-out-left');
             momentTitle.classList.remove('fade-out-left');
 
             // Aplicamos a animação de entrada no conteúdo do cronómetro
@@ -254,7 +261,7 @@ btnNext.addEventListener('click', () => {
             if (finalContent) {
                 finalContent.classList.add('fade-in-from-right');
                 setTimeout(() => {
-                    finalContent.classList.remove('fade-in-from-right'); 
+                    finalContent.classList.remove('fade-in-from-right');
                 }, 400);
             }
         }, 400);
@@ -267,37 +274,11 @@ btnPrev.addEventListener('click', () => {
         // Decrementa o index e chama a animação de voltar
         currentIndex--;
         changeMomentWithAnimation('prev');
-        
+
         // Se estiver voltando, também carrega fotos anteriores caso o cache tenha sido limpo
         preloadMidias(Math.max(0, currentIndex - 2), 2);
     }
 });
-
-// Evento: Botão Voltar da Tela Final
-if (btnVoltarFinal) {
-    btnVoltarFinal.addEventListener('click', () => {
-        const finalContent = cronometroSection.querySelector('.cronometro-section');
-        
-        if (finalContent) finalContent.classList.add('fade-out-right');
-
-        setTimeout(() => {
-            cronometroSection.classList.add('hidden');
-            if (finalContent) finalContent.classList.remove('fade-out-right');
-            
-            momentSection.classList.remove('hidden');
-
-            contentContainer.classList.add('fade-in-from-left');
-            momentLine.classList.add('fade-in-from-left');
-            momentTitle.classList.add('fade-in-from-left');
-
-            setTimeout(() => {
-                contentContainer.classList.remove('fade-in-from-left');
-                momentLine.classList.remove('fade-in-from-left');
-                momentTitle.classList.remove('fade-in-from-left');
-            }, 400);
-        }, 400);
-    });
-}
 
 // Inicia a busca assim que o script carrega
 fetchMomentos();
@@ -315,20 +296,20 @@ async function carregarMusicaDeFundo() {
             .from('musicas_fundo')
             .select('url_arquivo')
             .eq('selecionada', true)
-            .single(); 
+            .single();
 
         if (error) throw error;
 
         if (data && data.url_arquivo) {
-            audioEl.src = data.url_arquivo; 
-            audioEl.volume = 0.5; 
+            audioEl.src = data.url_arquivo;
+            audioEl.volume = 0.5;
 
             audioEl.play().then(() => {
                 console.log("Música tocando automaticamente!");
             }).catch((erro) => {
                 console.log("Navegador bloqueou o autoplay. Exibindo botão para o usuário clicar.");
                 btnPlay.style.display = 'flex';
-                
+
                 btnPlay.addEventListener('click', () => {
                     audioEl.play();
                     btnPlay.style.display = 'none';
@@ -353,12 +334,12 @@ function abrirModal(momento) {
     } else {
         midiaHtml = `<img src="${momento.midia_url}" alt="Foto do momento" class="modal-midia">`;
     }
-    
+
     modalBody.innerHTML = `
         ${midiaHtml}
         <p class="modal-descricao">${momento.descricao}</p>
     `;
-    
+
     modal.classList.remove('hidden');
 }
 
@@ -366,14 +347,14 @@ function abrirModal(momento) {
 if (closeModal) {
     closeModal.addEventListener('click', () => {
         modal.classList.add('hidden');
-        modalBody.innerHTML = ''; 
+        modalBody.innerHTML = '';
     });
 }
 
 // Fechar clicando fora do modal
 if (modal) {
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) { 
+        if (e.target === modal) {
             modal.classList.add('hidden');
             modalBody.innerHTML = '';
         }

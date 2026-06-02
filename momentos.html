@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/mediaquery.css">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://i.ibb.co/mrRvpZYM/image-2.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/mrRvpZYM/image-2.png">
     <title>Nosso Namoro</title>
 </head>
 
@@ -67,9 +66,7 @@
 
             <div class="moment-line">
                 <hr class="hr-moment">
-                <img class="elemento-m laranja-m"
-                    src="https://i.ibb.co/mrRvpZYM/image-2.png"
-                    alt="Laranja">
+                <img class="elemento-m laranja-m" src="https://i.ibb.co/mrRvpZYM/image-2.png" alt="Laranja">
                 <hr class="hr-moment">
             </div>
 
@@ -78,40 +75,12 @@
                         class="ri-arrow-left-s-line"></i></button>
 
                 <div class="moment-content" id="moment-content">
-                    <h3 class="title-moment-loading">Carregando nossos
-                        momentos...</h3>
+                    <h3 class="title-moment-loading">Carregando nossos momentos...</h3>
                 </div>
 
                 <button class="nav-arrow arrow-right" id="btn-next"><i class="ri-arrow-right-s-line"></i></button>
             </div>
         </section>
-
-        <section class="pre-cronometro-section hidden" id="pre-cronometro-section">
-            <div class="moment-navigation-wrapper">
-
-                <div class="cronometro-section">
-                    <img src="https://i.ibb.co/LhhSkpZc/image-7.png" alt="Gato" class="elemento gato-m">
-                    <img src="https://i.ibb.co/20Mxk4JY/image-4.png" alt="Flor" class="elemento flor-m">
-                    <img src="https://i.ibb.co/7J7pT0RG/tied-bow-clipart-design-illustration-free-png.webp" alt="Fita"
-                        class="elemento fita-m">
-                    <img src="https://i.ibb.co/Jj0Hyc0Y/pngtree-heart-shaped-orange-fruit-png-image-19992868.png"
-                        alt="Laranja" class="elemento laranja-m">
-                    <img src="https://i.ibb.co/P3JRsmv/image-8.png" alt="Estrela" class="elemento estrela-m">
-                    <img src="https://i.ibb.co/gZJm9hcY/image-1.png" alt="Disco" class="elemento disco-m">
-                    <img src="https://i.ibb.co/svtbrNyd/image-5.png" alt="Minhoca" class="elemento minhoca-m">
-                    <img src="https://i.ibb.co/QFLjZHkr/image-2.png" alt="Cassete" class="elemento cassete-m">
-
-                    <h2 class="titulo-final">Pronta para o próximo passo?</h2>
-                    <p class="texto-final">A nossa história está só começando...</p>
-                </div>
-
-                <button class="nav-arrow arrow-left" id="btn-voltar-final" aria-label="Voltar para o último momento">
-                    <i class="ri-arrow-left-s-line"></i>
-                </button>
-
-            </div>
-        </section>
-    </section>
     </section>
 
     <div id="moment-modal" class="modal hidden">
@@ -122,7 +91,135 @@
         </div>
     </div>
 
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content modal-login">
+            <span class="close-modal" id="close-login">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Acesso Restrito</h2>
+            <p style="margin-bottom: 15px;">Apenas o casal pode alterar isso 💖</p>
+
+            <input type="text" id="login-user" placeholder="Usuário" class="input-admin">
+            <input type="password" id="login-pass" placeholder="Senha" class="input-admin">
+
+            <button id="btn-login" class="btn-iniciar"
+                style="position: relative; margin-top: 15px; padding: 10px 40px; right: auto; bottom: auto; width: 100%;">Entrar</button>
+            <p id="login-erro" style="color: red; display: none; margin-top: 10px;">Credenciais incorretas!</p>
+        </div>
+    </div>
+
+    <div id="musica-modal" class="modal hidden">
+        <div class="modal-content modal-musica">
+            <span class="close-modal" id="close-musica">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Nossa Playlist</h2>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+                <input type="text" id="busca-musica" placeholder="Buscar música..." class="input-admin"
+                    style="margin-top: 0; flex: 1;">
+                <button id="btn-abrir-add" class="btn-iniciar"
+                    style="position: static; padding: 10px 15px; font-size: 1rem; width: auto; animation: none;">
+                    + Adicionar
+                </button>
+            </div>
+
+            <div class="lista-musicas" id="lista-musicas">
+                <p>Carregando músicas...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-musica-modal" class="modal hidden" style="z-index: 3001;">
+        <div class="modal-content modal-musica-add">
+            <span class="close-modal" id="close-add-musica">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Nova Música</h2>
+
+            <div class="upload-area" style="margin-top: 20px;">
+                <input type="text" id="nome-musica" placeholder="Nome da Música (Ex: Nossa Música)" class="input-admin">
+                <input type="file" id="arquivo-musica" accept="audio/mp3, audio/mpeg" class="input-admin">
+                <button id="btn-upload-musica" class="btn-iniciar"
+                    style="position: static; padding: 10px 20px; font-size: 1rem; width: 100%; margin-top: 15px; animation: none;">
+                    Enviar Música
+                </button>
+                <p id="upload-status" style="margin-top: 10px; font-weight: bold; color: #8d0036;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="config-modal" class="modal hidden">
+        <div class="modal-content modal-musica">
+            <span class="close-modal" id="close-config">&times;</span>
+            <h2 style="color: #8d0036; font-family: Lemon;">Nossos Momentos</h2>
+
+            <div style="display: flex; gap: 10px; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+                <input type="text" id="busca-momento" placeholder="Buscar momento..." class="input-admin"
+                    style="margin-top: 0; flex: 1;">
+                <button id="btn-abrir-add-momento" class="btn-iniciar"
+                    style="position: static; padding: 10px 15px; font-size: 1rem; width: auto; animation: none;">
+                    + Novo
+                </button>
+            </div>
+
+            <div class="momentos-grid" id="momentos-grid">
+                <p>Carregando momentos...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-momento-modal" class="modal hidden" style="z-index: 3500;">
+        <div class="modal-content modal-full">
+            <div class="modal-header-edit">
+                <button id="btn-voltar-edit" class="btn-voltar-seta"><i class="ri-arrow-left-line"></i></button>
+                <h2 id="titulo-form-momento" style="color: #8d0036; font-family: Lemon; margin: 0;">Editar Momento</h2>
+            </div>
+
+            <div class="edit-container">
+                <div class="preview-area">
+                    <img id="edit-preview-img" src="https://via.placeholder.com/300x200?text=Sua+Foto+Aqui"
+                        alt="Preview">
+                </div>
+
+                <div class="campos-area">
+                    <label>Nome do Momento:</label>
+                    <input type="text" id="edit-titulo" class="input-admin" placeholder="Ex: Nosso primeiro encontro">
+
+                    <label>Data:</label>
+                    <input type="date" id="edit-data" class="input-admin">
+
+                    <div class="form-group">
+                        <label for="arquivo-foto">Fazer Upload de Foto/Vídeo:</label>
+                        <input type="file" id="arquivo-foto" accept="image/*, video/mp4" class="input-form">
+                    </div>
+
+                    <label>Descrição:</label>
+                    <textarea id="edit-desc" class="input-admin text-area" rows="4"
+                        placeholder="Escreva sobre esse momento..."></textarea>
+                </div>
+
+                <div class="botoes-fixos">
+                    <button id="btn-cancelar-edit" class="btn-cancelar ">Cancelar</button>
+                    <button id="btn-salvar-momento" class="btn-salvar ">Salvar
+                        Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmacao-modal" class="modal hidden" style="z-index: 4000;">
+        <div class="modal-content modal-content-con">
+            <h3 id="confirmacao-titulo"
+                style="color: #8d0036; font-family: Lemon; font-size: 2rem; margin-bottom: 15px;">Atenção</h3>
+            <p id="confirmacao-mensagem"
+                style="margin-bottom: 25px; font-size: 1.2rem; color: #333; font-weight: bold; text-align: center;"></p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button id="btn-confirmar-sim" class="btn-escolha btn-sim"
+                    style="padding: 10px 30px; font-size: 1.2rem; width: 100%;">Sim</button>
+                <button id="btn-confirmar-nao" class="btn-escolha btn-nao"
+                    style="padding: 10px 30px; font-size: 1.2rem; width: 100%; position: static;">Não</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/util.js"></script>
     <script type="module" src="assets/js/main.js"></script>
     <script src="assets/js/menu.js"></script>
 </body>
+
 </html>
